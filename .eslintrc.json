@@ -24,6 +24,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["src"],
   "plugins": [
     "tailwindcss",
     "react",

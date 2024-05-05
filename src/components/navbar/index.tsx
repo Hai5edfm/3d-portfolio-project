@@ -5,7 +5,7 @@ export const Navbar = () => {
     <header className="header">
       <NavLink
         to="/"
-        className="flex h-10 w-10 items-center justify-center rounded-lg bg-white font-bold shadow-md"
+        className="flex h-10 w-10 items-center justify-center rounded-lg bg-white px-8 font-bold shadow-md"
       >
         <p className="blue-gradient_text">Haise</p>
       </NavLink>
