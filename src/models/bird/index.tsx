@@ -3,16 +3,17 @@ import birdScene from "../../assets/3d/bird.glb";
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-export const Bird = ({ isRotating }) => {
-  const birdRef = useRef();
+export const Bird = () => {
+  const birdRef: any = useRef();
   const { scene, animations } = useGLTF(birdScene);
   const { actions } = useAnimations(animations, birdRef);
 
   useEffect(() => {
-    actions["Take 001"].play();
+    actions["Take 001"]!.play();
   }, [actions]);
 
   useFrame(({ clock, camera }) => {
+    if (!birdRef?.current) return;
     // Update the y position simulate the flight moving in a sinus wave
     birdRef.current.position.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
 

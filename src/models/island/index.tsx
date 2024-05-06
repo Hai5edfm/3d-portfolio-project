@@ -24,11 +24,11 @@ export function Island({
   setCurrentStage,
   currentFocusPoint,
   ...props
-}) {
-  const islandRef = useRef();
+}: any) {
+  const islandRef: any = useRef();
   // Get access to the Three.js renderer and viewport
   const { gl, viewport } = useThree();
-  const { nodes, materials } = useGLTF(islandScene);
+  const { nodes, materials }: any = useGLTF(islandScene);
 
   // Use a ref for the last mouse x position
   const lastX = useRef(0);
@@ -38,7 +38,7 @@ export function Island({
   const dampingFactor = 0.95;
 
   // Handle pointer (mouse or touch) down event
-  const handlePointerDown = (event) => {
+  const handlePointerDown = (event: any) => {
     event.stopPropagation();
     event.preventDefault();
     setIsRotating(true);
@@ -51,14 +51,14 @@ export function Island({
   };
 
   // Handle pointer (mouse or touch) up event
-  const handlePointerUp = (event) => {
+  const handlePointerUp = (event: any) => {
     event.stopPropagation();
     event.preventDefault();
     setIsRotating(false);
   };
 
   // Handle pointer (mouse or touch) move event
-  const handlePointerMove = (event) => {
+  const handlePointerMove = (event: any) => {
     event.stopPropagation();
     event.preventDefault();
     if (isRotating) {
@@ -74,9 +74,11 @@ export function Island({
   };
 
   // Handle keydown events
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     if (event.key === "ArrowLeft") {
       if (!isRotating) setIsRotating(true);
+
+      if (!islandRef.current) return;
 
       islandRef.current.rotation.y += 0.01 * Math.PI;
       rotationSpeed.current = 0.0125;
@@ -89,14 +91,14 @@ export function Island({
   };
 
   // Handle keyup events
-  const handleKeyUp = (event) => {
+  const handleKeyUp = (event: any) => {
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       setIsRotating(false);
     }
   };
 
   // Touch events for mobile devices
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: any) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(true);
@@ -105,13 +107,13 @@ export function Island({
     lastX.current = clientX;
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = (e: any) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(false);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: any) => {
     e.stopPropagation();
     e.preventDefault();
 

@@ -16,7 +16,7 @@ export const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("Idle" as string);
 
-  const { alert, showAlert, hideAlert } = useAlert();
+  const { alert, showAlert } = useAlert();
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;

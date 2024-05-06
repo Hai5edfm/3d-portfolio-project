@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src/**/*", "src/assets/3d/bird.glb"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

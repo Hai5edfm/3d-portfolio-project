@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface Props {
-  type: "danger" | "success";
+  type: string;
   text: string;
 }
 
