@@ -39,14 +39,11 @@ export const Projects = () => {
               </h4>
               <p className="mt-2 text-slate-500">{project.description}</p>
               <div className="flex mt-5 items-center gap-2 font-poppins">
-                <Link
-                  to={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <p
                   className="font-semibold text-blue-500"
                 >
                   Live Link
-                </Link>
+                </p>
                 <img
                   src={arrow}
                   alt="arrow"
